@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <main>
-        <Hero headline="Leading Commercial Landscaping Services & Maintenance" />
+        <Hero />
         <TrustedBy />
         <BusinessSummary />
         <Capabilities />
