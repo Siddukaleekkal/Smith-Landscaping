@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-color: #FFFFFF;
+    --text-color: #333333;
+    --accent-green: #68A836; /* Lighter leaf green from the logo */
+    --enterprise-navy: #0F3A20; /* Dark forest green from the logo "SMITH" text */
+    --light-stone: #F4F6F8;
+    --border-color: #E2E2E2;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-montserrat), sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-block bg-[var(--accent-green)] text-white px-6 py-3 font-semibold rounded transition-colors duration-200 hover:bg-[#3c8225];
+  }
+}

@@ -1,0 +1,99 @@
+
+> smith-landscaping@0.0.1 build
+> next build
+
+   ▲ Next.js 15.3.1
+
+   Creating an optimized production build ...
+Failed to compile.
+
+./src/app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/globals.css
+Error: Cannot find module 'autoprefixer'
+Require stack:
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/index.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/index.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack-config.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack-build/impl.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/server/require-hook.js:55:36
+    at Function.resolve (node:internal/modules/helpers:157:19)
+    at loadPlugin (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:53:32)
+    at /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:185:56
+    at Array.map (<anonymous>)
+    at getPostCssPlugins (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:185:47)
+    at async /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/index.js:125:36
+    at async /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js:52:40
+    at async Span.traceAsyncFn (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/trace/trace.js:157:20)
+
+Import trace for requested module:
+./src/app/globals.css.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/globals.css
+./src/app/globals.css
+
+./src/app/globals.css
+Error: Cannot find module 'autoprefixer'
+Require stack:
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/index.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/index.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack-config.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack-build/impl.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/server/require-hook.js:55:36
+    at Function.resolve (node:internal/modules/helpers:157:19)
+    at loadPlugin (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:53:32)
+    at /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:185:56
+    at Array.map (<anonymous>)
+    at getPostCssPlugins (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:185:47)
+    at async /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/index.js:125:36
+    at async /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js:52:40
+    at async Span.traceAsyncFn (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/trace/trace.js:157:20)
+    at tryRunOrWebpackError (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:29:316142)
+    at __webpack_require_module__ (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:29:131548)
+    at __nested_webpack_require_161494__ (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:29:130983)
+    at /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:29:131840
+    at symbolIterator (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+    at done (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/neo-async/async.js:1:14824)
+    at Hook.eval [as callAsync] (eval at create (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:14:9224), <anonymous>:15:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:14:6378)
+    at /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:29:130703
+    at symbolIterator (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/neo-async/async.js:1:14402)
+-- inner error --
+Error: Cannot find module 'autoprefixer'
+Require stack:
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/index.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/index.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack-config.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack-build/impl.js
+- /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/server/require-hook.js:55:36
+    at Function.resolve (node:internal/modules/helpers:157:19)
+    at loadPlugin (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:53:32)
+    at /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:185:56
+    at Array.map (<anonymous>)
+    at getPostCssPlugins (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:185:47)
+    at async /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/config/blocks/css/index.js:125:36
+    at async /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js:52:40
+    at async Span.traceAsyncFn (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/trace/trace.js:157:20)
+    at Object.<anonymous> (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!/Users/viracis/Desktop/projects/Smith Landscaping/src/app/globals.css:1:7)
+    at /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:29:962742
+    at Hook.eval [as call] (eval at create (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:14:9002), <anonymous>:7:1)
+    at Hook.CALL_DELEGATE [as _call] (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:14:6272)
+    at /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:29:131581
+    at tryRunOrWebpackError (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:29:316096)
+    at __webpack_require_module__ (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:29:131548)
+    at __nested_webpack_require_161494__ (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:29:130983)
+    at /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/webpack/bundle5.js:29:131840
+    at symbolIterator (/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+
+Generated code for /Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!/Users/viracis/Desktop/projects/Smith Landscaping/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!/Users/viracis/Desktop/projects/Smith Landscaping/src/app/globals.css
+
+Import trace for requested module:
+./src/app/globals.css
+
+
+> Build failed because of webpack errors
