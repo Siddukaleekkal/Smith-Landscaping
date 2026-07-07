@@ -37,7 +37,7 @@ export default function MobileNav() {
         </div>
 
         {/* 2. Main Navbar */}
-        <nav className="border-b border-border-color bg-white relative h-[60px] md:h-auto md:min-h-[60px]">
+        <nav className="border-b border-border-color bg-white relative h-[80px] md:h-auto md:min-h-[60px]">
           <div className="max-w-[1600px] mx-auto flex justify-between items-stretch h-full pl-4 md:pl-8">
 
             {/* Logo */}
@@ -45,7 +45,7 @@ export default function MobileNav() {
               <Image
                 src={logoImg}
                 alt="Smith Landscaping Logo"
-                className="h-10 md:h-[80px] w-auto object-contain md:-my-6"
+                className="h-14 md:h-[80px] w-auto object-contain md:-my-6"
                 priority
               />
             </Link>
@@ -69,7 +69,7 @@ export default function MobileNav() {
             {/* Mobile Right Action Area */}
             <div className="flex md:hidden h-full items-stretch">
               <button
-                className="bg-accent-green text-white flex items-center justify-center w-[60px] h-[60px] m-0 p-0"
+                className="bg-accent-green text-white flex items-center justify-center w-[80px] h-[80px] m-0 p-0"
                 onClick={() => setIsOpen(true)}
                 aria-label="Open menu"
               >
@@ -92,7 +92,7 @@ export default function MobileNav() {
       <div className={`fixed top-0 right-0 h-full w-[80%] max-w-sm bg-white z-[70] transform transition-transform duration-300 ease-in-out md:hidden flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
 
         {/* Drawer Header */}
-        <div className="bg-accent-green min-h-[60px] flex justify-end items-center px-5 flex-shrink-0">
+        <div className="bg-accent-green min-h-[80px] flex justify-end items-center px-5 flex-shrink-0">
           <button onClick={() => setIsOpen(false)} className="text-white" aria-label="Close menu">
             <X size={28} strokeWidth={1.5} />
           </button>
