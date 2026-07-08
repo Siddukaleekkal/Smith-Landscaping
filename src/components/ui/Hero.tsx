@@ -14,7 +14,7 @@ export default function Hero() {
         
         <div className="flex flex-col sm:flex-row gap-4">
           <Link 
-            href="#quote" 
+            href="/quote" 
             className="inline-block bg-accent-green border-2 border-accent-green text-white text-sm font-bold tracking-widest px-8 py-4 uppercase hover:bg-transparent transition-colors duration-300 text-center"
           >
             Get a Quote

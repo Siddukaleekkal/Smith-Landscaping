@@ -19,7 +19,7 @@ export default function MobileNav() {
               FAQ
             </Link>
             <Link
-              href="#quote"
+              href="/quote"
               className="bg-accent-green text-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider hover:bg-enterprise-navy transition-colors"
             >
               Get a Quote
@@ -125,7 +125,7 @@ export default function MobileNav() {
             CALL US: <a href="tel:804-240-1950" className="text-accent-green underline ml-1">804-240-1950</a>
           </div>
           <Link 
-            href="#quote" 
+            href="/quote" 
             className="block bg-accent-green text-white text-center px-6 py-5 text-[13px] font-extrabold tracking-widest uppercase hover:bg-enterprise-navy transition-colors"
             onClick={() => setIsOpen(false)}
           >
