@@ -123,7 +123,11 @@ export async function getPostBySlug(slug: string): Promise<BlogPostData | null> 
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const matterResult = matter(fileContents);
     const processedContent = await remark().use(html).process(matterResult.content);
-    const contentHtml = processedContent.toString();
+    let contentHtml = processedContent.toString();
+    contentHtml = contentHtml.replace(/<h3>(.*?)<\/h3>/g, (match, p1) => {
+      const id = p1.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      return `<h3 id="${id}" class="scroll-mt-32">${p1}</h3>`;
+    });
     
     const wordCount = matterResult.content.split(/\s+/).length;
     const readingTime = Math.ceil(wordCount / 200);

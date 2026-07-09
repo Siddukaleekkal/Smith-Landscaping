@@ -8,7 +8,7 @@ export default function GlobalCTA() {
         Find out how we can build a landscape that supports your goals and a team of experts focused on you.
       </p>
       <Link 
-        href="#contact"
+        href="mailto:contact@smithlawnva.com"
         className="inline-block border border-white text-white text-[12px] font-extrabold tracking-[0.2em] px-8 py-3 uppercase bg-white !text-accent-green hover:bg-transparent hover:!text-white transition-colors"
       >
         LET'S GET IN TOUCH

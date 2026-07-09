@@ -60,7 +60,7 @@ export default function TermsPage() {
             Visit our FAQ
           </Link>
           <Link 
-            href="#contact" 
+            href="mailto:contact@smithlawnva.com" 
             className="inline-block border border-slate-200 text-slate-600 text-xs font-bold tracking-widest uppercase px-6 py-3 hover:bg-slate-50 transition-colors"
           >
             Contact Support

@@ -7,41 +7,31 @@ export default function Hero() {
       {/* Left Column - Solid Brand Color & Text */}
       <div className="w-full lg:w-[40%] bg-enterprise-navy flex flex-col justify-center px-8 lg:px-16 xl:px-24 py-20 lg:py-0 z-10 order-2 lg:order-1">
         <h1 className="text-4xl md:text-5xl lg:text-5xl text-white font-light leading-[1.2] mb-12 font-heading tracking-wide">
-          Consider Your <br />
-          Landscaping Needs <br />
-          Solved
+          Transforming <br />
+          Virginia's Homes <br />
+          & Properties
         </h1>
         
         <div className="flex flex-col sm:flex-row gap-4">
           <Link 
             href="/quote" 
-            className="inline-block bg-accent-green border-2 border-accent-green text-white text-sm font-bold tracking-widest px-8 py-4 uppercase hover:bg-transparent transition-colors duration-300 text-center"
+            className="inline-block bg-accent-green border-2 border-accent-green text-white text-lg font-bold tracking-widest px-12 py-5 uppercase hover:bg-transparent transition-colors duration-300 text-center w-max"
           >
             Get a Quote
-          </Link>
-          <Link 
-            href="/company" 
-            className="inline-block border-2 border-accent-green text-white text-sm font-bold tracking-widest px-8 py-4 uppercase hover:bg-accent-green transition-colors duration-300 text-center"
-          >
-            About Smith Landscaping
           </Link>
         </div>
       </div>
 
       {/* Right Column - Video / Media */}
-      <div className="w-full lg:w-[60%] relative h-[400px] lg:h-auto order-1 lg:order-2">
-        <video
-          autoPlay
-          loop
-          muted
+      <div className="w-full lg:w-[60%] relative h-[400px] lg:h-auto order-1 lg:order-2 overflow-hidden">
+        <video 
+          autoPlay 
+          loop 
+          muted 
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute w-full h-[120%] object-cover object-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         >
-          <source src="/Hero Section.mp4" type="video/mp4" />
-          <source src="/Smith Landscaping | MAIN AD.mov" type="video/quicktime" />
-          <div className="w-full h-full bg-slate-200 flex items-center justify-center">
-            <span className="text-slate-500">Video Background</span>
-          </div>
+          <source src="/Resources & Services & Homepage/Hero Section.mp4" type="video/mp4" />
         </video>
       </div>
       

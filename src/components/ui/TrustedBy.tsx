@@ -2,15 +2,15 @@ import { InfiniteSlider } from "@/components/ui/infinite-slider";
 
 export default function TrustedBy() {
   const logos = [
-    { name: "CVS Health", url: "/CVS_Health-Logo.wine.png" },
-    { name: "Carabbas", url: "/Carabbas.png" },
-    { name: "Crunch Fitness", url: "/Crunch_Logo_2023.jpg" },
-    { name: "Floor Decor", url: "/Floor Decor.webp" },
-    { name: "Kohls", url: "/Kohl’s-logo.png" },
-    { name: "Krispy Kreme", url: "/Krispy_Kreme_logo.svg.webp" },
-    { name: "Sheetz", url: "/Sheetz.webp" },
-    { name: "Walgreens", url: "/Walgreens logo.png" },
-    { name: "Wawa", url: "/Wawa-Logo.jpg" },
+    { name: "CVS Health", url: "/Logos/CVS_Health-Logo.wine.png" },
+    { name: "Carabbas", url: "/Logos/Carabbas.png" },
+    { name: "Crunch Fitness", url: "/Logos/Crunch_Logo_2023.jpg" },
+    { name: "Floor Decor", url: "/Logos/Floor Decor.webp" },
+    { name: "Kohls", url: "/Logos/Kohl’s-logo.png" },
+    { name: "Krispy Kreme", url: "/Logos/Krispy_Kreme_logo.svg.webp" },
+    { name: "Sheetz", url: "/Logos/Sheetz.webp" },
+    { name: "Walgreens", url: "/Logos/Walgreens logo.png" },
+    { name: "Wawa", url: "/Logos/Wawa-Logo.jpg" },
   ];
 
   return (

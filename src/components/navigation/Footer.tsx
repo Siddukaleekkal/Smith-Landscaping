@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Instagram } from 'lucide-react';
-import logoImg from '../../../public/Smith Landscaping Virginia Logo.png';
+import { Instagram, Facebook } from 'lucide-react';
+import logoImg from '../../../public/Logos/logo-green-va.png';
 
 export default function Footer() {
   return (
@@ -13,13 +13,22 @@ export default function Footer() {
           <Link href="/">
             <Image src={logoImg} alt="Smith Landscaping Logo" className="h-10 w-auto" />
           </Link>
-          <a 
-            href="https://www.instagram.com/smithlandscaping.va/" 
-            className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-accent-green hover:text-enterprise-navy transition-all duration-300"
-            aria-label="Instagram"
-          >
-            <Instagram size={16} />
-          </a>
+          <div className="flex items-center gap-2">
+            <a 
+              href="https://www.instagram.com/smithlandscaping.va/" 
+              className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-accent-green hover:text-enterprise-navy transition-all duration-300"
+              aria-label="Instagram"
+            >
+              <Instagram size={16} />
+            </a>
+            <a 
+              href="https://www.facebook.com/share/14mDqgBUwF1/?mibextid=wwXIfr" 
+              className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:bg-accent-green hover:text-enterprise-navy transition-all duration-300"
+              aria-label="Facebook"
+            >
+              <Facebook size={16} />
+            </a>
+          </div>
         </div>
 
         {/* Center: Legal Links */}

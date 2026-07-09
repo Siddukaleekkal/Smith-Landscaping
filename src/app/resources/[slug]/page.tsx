@@ -47,7 +47,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="flex items-center gap-6 py-6 border-t border-b border-slate-100 text-xs font-medium text-slate-500 mb-12">
             <div className="flex items-center gap-2">
               <div className="w-6 h-6 rounded-full overflow-hidden border border-slate-200 bg-white flex items-center justify-center">
-                <img src="/favicon.png" alt="Smith Strategy" className="w-full h-full object-contain p-0.5" />
+                <img src="/Logos/logo-green-va.png" alt="Smith Strategy" className="w-full h-full object-contain p-0.5" />
               </div>
               <span className="text-enterprise-navy">Smith Strategy</span>
             </div>
@@ -81,15 +81,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <h3 className="text-[11px] font-extrabold tracking-[0.2em] text-slate-400 uppercase mb-6">IN THIS ARTICLE</h3>
                 <ul className="flex flex-col gap-4 text-[13px] text-slate-600">
                   {post.bullets && post.bullets.length > 0 ? (
-                    post.bullets.map((bullet, idx) => (
-                      <li key={idx} className="flex gap-4 hover:text-accent-green cursor-pointer">
-                        <span className="text-slate-300">0{idx + 1}</span> {bullet}
-                      </li>
-                    ))
+                    post.bullets.map((bullet, idx) => {
+                      const id = bullet.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                      return (
+                        <li key={idx}>
+                          <a href={`#${id}`} className="flex gap-4 hover:text-accent-green cursor-pointer transition-colors">
+                            <span className="text-slate-300">0{idx + 1}</span> {bullet}
+                          </a>
+                        </li>
+                      );
+                    })
                   ) : (
                     <>
-                      <li className="flex gap-4 hover:text-accent-green cursor-pointer"><span className="text-slate-300">01</span> Introduction</li>
-                      <li className="flex gap-4 hover:text-accent-green cursor-pointer"><span className="text-slate-300">02</span> Maintenance Overview</li>
+                      <li><a href="#introduction" className="flex gap-4 hover:text-accent-green cursor-pointer transition-colors"><span className="text-slate-300">01</span> Introduction</a></li>
+                      <li><a href="#maintenance-overview" className="flex gap-4 hover:text-accent-green cursor-pointer transition-colors"><span className="text-slate-300">02</span> Maintenance Overview</a></li>
                     </>
                   )}
                 </ul>

@@ -7,9 +7,12 @@ export const metadata = {
 };
 
 const defaultImages = [
-  'https://images.unsplash.com/photo-1558904541-efa843a96f09?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1457269449834-928af64c684d?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80'
+  '/Resources & Services & Homepage/photo-1668120089662-42642838cfef.avif',
+  '/Resources & Services & Homepage/photo-1686663048931-6df69f577a2f.avif',
+  '/Resources & Services & Homepage/photo-1734079692079-172d8243ebd3.avif',
+  '/Resources & Services & Homepage/photo-1734079692160-fcbe4be6ab96.avif',
+  '/Resources & Services & Homepage/photo-1734303023491-db8037a21f09.avif',
+  '/Resources & Services & Homepage/photo-1734303023518-71e656574f50.avif'
 ];
 
 export default async function ResourcesPage() {
@@ -26,7 +29,7 @@ export default async function ResourcesPage() {
             <div className="h-[1px] bg-slate-200 w-full"></div>
           </div>
           <h1 className="text-4xl md:text-5xl text-enterprise-navy font-light tracking-tight max-w-3xl">
-            Thoughts on the future of commercial property management.
+            Expert insights and guides to elevate your home's outdoor living space.
           </h1>
         </div>
 

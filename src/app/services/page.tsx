@@ -1,16 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { 
-  TreePine, 
-  Pickaxe, 
-  PenTool, 
-  Flower2, 
-  Leaf, 
-  Grid2X2, 
-  Droplets, 
-  Wrench, 
-  Sprout 
-} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -19,145 +8,118 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  
-  const servicesList = [
+  const categories = [
     {
-      title: "Landscaping",
-      desc: "Comprehensive commercial landscaping tailored to your property's exact needs.",
-      icon: <TreePine size={32} strokeWidth={1} />
+      title: "Hardscaping & Construction",
+      subtitle: "Structural elegance built to last.",
+      desc: "We design and construct beautiful, durable outdoor living spaces. From elegant stonework to critical drainage systems, our installations form the permanent foundation of your property's value.",
+      services: [
+        "Custom Patios & Walkways",
+        "Retaining Walls & Masonry",
+        "Custom Stonework",
+        "Advanced Drainage Solutions"
+      ],
+      image: "/Resources & Services & Homepage/photo-1617850687395-620757feb1f3.avif"
     },
     {
-      title: "Hardscaping",
-      desc: "Structural enhancements including patios, walkways, retaining walls, and stonework.",
-      icon: <Pickaxe size={32} strokeWidth={1} />
+      title: "Landscape Design & Installation",
+      subtitle: "Transforming your vision into reality.",
+      desc: "We completely reimagine your outdoor space. Through thoughtful design, professional planting, and premium sod installation, we craft lush environments tailored precisely to your aesthetic.",
+      services: [
+        "Comprehensive Landscape Design",
+        "Instant Sod Installation",
+        "Tree, Shrub & Plant Installation",
+        "Complete Property Transformations"
+      ],
+      image: "/Resources & Services & Homepage/photo-1597201278257-3687be27d954.avif"
     },
     {
-      title: "Landscape Design",
-      desc: "Innovative, constructible design that considers future operating costs and aesthetics.",
-      icon: <PenTool size={32} strokeWidth={1} />
-    },
-    {
-      title: "Mulching and Bed Maintenance",
-      desc: "Proactive soil nutrition and pristine bed edges for a polished appearance year-round.",
-      icon: <Flower2 size={32} strokeWidth={1} />
-    },
-    {
-      title: "Leaf Removal",
-      desc: "Efficient autumn cleanup to protect your turf and keep your property immaculate.",
-      icon: <Leaf size={32} strokeWidth={1} />
-    },
-    {
-      title: "Sod Installation",
-      desc: "Instant, vibrant green lawns installed with proper soil preparation and care.",
-      icon: <Grid2X2 size={32} strokeWidth={1} />
-    },
-    {
-      title: "Drainage Solutions",
-      desc: "Strategic water management to prevent erosion and protect your landscape investments.",
-      icon: <Droplets size={32} strokeWidth={1} />
-    },
-    {
-      title: "Property Maintenance",
-      desc: "Consistent service delivery that keeps your commercial property safe and beautiful.",
-      icon: <Wrench size={32} strokeWidth={1} />
-    },
-    {
-      title: "Lawn Care",
-      desc: "Expert mowing, edging, and turf management for thick, healthy grass.",
-      icon: <Sprout size={32} strokeWidth={1} />
+      title: "Comprehensive Maintenance",
+      subtitle: "Pristine, year-round care.",
+      desc: "We provide meticulous, scheduled grounds management for both residential estates and large commercial properties, ensuring your investment looks immaculate through every season.",
+      services: [
+        "Residential & Commercial Lawn Care",
+        "Premium Mulch Application",
+        "Weed Control & Bed Maintenance",
+        "Seasonal Leaf Removal & Cleanup"
+      ],
+      image: "/Resources & Services & Homepage/photo-1592595896616-c37162298647.avif"
     }
   ];
 
   return (
     <div className="bg-white min-h-screen">
       
-      {/* 1. Hero Banner */}
-      <section className="bg-enterprise-navy text-white py-24 text-center px-[5%]">
-        <div className="max-w-4xl mx-auto flex flex-col items-center">
-          <div className="w-12 h-12 mb-6 text-white opacity-80">
-            <TreePine size={48} strokeWidth={1} />
-          </div>
-          <h1 className="text-3xl md:text-5xl font-light mb-6 tracking-wide">
-            Depth of Commercial & Residential Landscape Services
+      {/* Premium Header */}
+      <section className="bg-enterprise-navy text-white pt-24 pb-20 px-[5%] relative overflow-hidden">
+        {/* Subtle background decoration */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent-green/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+        <div className="max-w-[1400px] mx-auto relative z-10 text-center">
+          <span className="text-[11px] font-extrabold tracking-[0.2em] text-accent-green uppercase mb-6 block">Our Capabilities</span>
+          <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-8">
+            Expert Services for Exceptional Properties
           </h1>
-          <p className="text-white/90 text-[15px] leading-relaxed max-w-3xl mb-8 font-light">
-            With a special focus on you and your goals, we're changing the way landscape services are delivered. From design to development, maintenance and enhancements, our depth of experience makes us a seamless partner for the entire lifecycle of your landscape.
+          <p className="text-white/80 text-lg font-light max-w-2xl mx-auto leading-relaxed">
+            From visionary landscape design to structural hardscaping and precise maintenance, we deliver enterprise-grade execution for every project.
           </p>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="w-full h-2 bg-accent-green"></div>
+      {/* 2. Alternating Editorial Layout */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-[1400px] mx-auto px-[5%] flex flex-col gap-32">
+          {categories.map((category, idx) => {
+            const isEven = idx % 2 === 0;
+            return (
+              <div key={idx} className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 lg:gap-24 items-center group`}>
+                
+                {/* Visual Block */}
+                <div className="w-full lg:w-1/2">
+                  <div className="w-full aspect-square md:aspect-[4/3] bg-slate-100 flex items-center justify-center rounded-2xl shadow-lg overflow-hidden relative">
+                    <img 
+                      src={category.image} 
+                      alt={category.title}
+                      className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-enterprise-navy opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
+                  </div>
+                </div>
 
-      {/* 2. Grid of Services */}
-      <section className="py-24 px-[5%] max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12 text-center">
-          {servicesList.map((service, i) => (
-            <div key={i} className="flex flex-col items-center group cursor-default">
-              <div className="w-24 h-24 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-enterprise-navy group-hover:text-enterprise-navy transition-all duration-300 mb-6">
-                {service.icon}
+                {/* Text Block */}
+                <div className="w-full lg:w-1/2 flex flex-col">
+                  <span className="text-accent-green font-bold tracking-widest text-sm mb-4">
+                    0{idx + 1} // {category.subtitle}
+                  </span>
+                  <h2 className="text-4xl md:text-5xl font-light text-enterprise-navy mb-8 tracking-wide">
+                    {category.title}
+                  </h2>
+                  <p className="text-slate-500 text-lg font-light leading-relaxed mb-12">
+                    {category.desc}
+                  </p>
+                  
+                  <div className="w-full h-[1px] bg-slate-200 mb-8"></div>
+                  
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8">
+                    {category.services.map((service, sIdx) => (
+                      <li key={sIdx} className="flex items-center gap-3 text-slate-700 font-medium">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent-green shrink-0"></div>
+                        {service}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-16">
+                    <Link href="/quote" className="inline-flex items-center gap-3 text-[13px] font-extrabold tracking-[0.2em] uppercase text-enterprise-navy hover:text-accent-green transition-colors">
+                      Request this service <ArrowRight size={18} />
+                    </Link>
+                  </div>
+                </div>
+
               </div>
-              <h4 className="text-[11px] font-extrabold tracking-[0.2em] text-slate-800 uppercase mb-4">
-                {service.title}
-              </h4>
-              <p className="text-[13px] text-slate-500 font-light leading-relaxed max-w-xs">
-                {service.desc}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
-
-      {/* 3. Commitment Section */}
-      <section className="py-20 px-[5%] text-center border-t border-slate-100">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-light text-enterprise-navy mb-4 tracking-wide">
-            Commitment to Service Excellence
-          </h2>
-          <p className="text-[13px] text-slate-500 font-light leading-relaxed mb-10">
-            The level of service that defines Smith Landscaping was built by combining decades of local expertise with the resources of an industry leader. We exist to provide unparalleled landscape services that make your job easier.
-          </p>
-          <Link 
-            href="/company" 
-            className="inline-block border border-enterprise-navy text-enterprise-navy text-[11px] font-bold tracking-[0.2em] uppercase px-8 py-3 hover:bg-enterprise-navy hover:text-white transition-colors"
-          >
-            SEE OUR HISTORY
-          </Link>
-        </div>
-      </section>
-
-      {/* 4. Split Image Footer Block (Matches Company Page) */}
-      <section className="flex flex-col md:flex-row w-full min-h-[500px]">
-        {/* Left Side Image */}
-        <div className="w-full md:w-1/2 relative min-h-[300px] md:min-h-full">
-          <Image 
-            src="/new team picture.jpeg" 
-            alt="Smith Landscaping Team" 
-            fill
-            className="object-cover"
-          />
-        </div>
-        
-        {/* Right Side Blue Block */}
-        <div className="w-full md:w-1/2 bg-enterprise-navy flex items-center justify-center p-12 md:p-24 text-white">
-          <div className="max-w-md w-full">
-            <h3 className="text-3xl font-bold mb-6 leading-snug">
-              Great Service. Beautiful Landscapes.
-            </h3>
-            <p className="text-white/80 text-sm leading-relaxed mb-10 font-light">
-              Benefit from a comprehensive landscape maintenance plan designed to meet your needs and exceed your expectations, all delivered by a team invested in your success.
-            </p>
-            <Link 
-              href="#contact" 
-              className="inline-block border border-white text-white text-[12px] font-bold tracking-widest px-8 py-3 uppercase hover:bg-white hover:text-enterprise-navy transition-colors"
-            >
-              LEARN MORE
-            </Link>
-          </div>
-        </div>
-      </section>
-
-
 
     </div>
   );

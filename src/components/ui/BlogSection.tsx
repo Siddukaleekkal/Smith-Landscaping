@@ -14,13 +14,20 @@ export default async function BlogSection() {
         
         {/* 3 Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-          {recentPosts.map(post => (
+          {recentPosts.map((post, index) => {
+            const fallbackImages = [
+              '/Resources & Services & Homepage/photo-1668120089662-42642838cfef.avif',
+              '/Resources & Services & Homepage/photo-1686663048931-6df69f577a2f.avif',
+              '/Resources & Services & Homepage/photo-1734079692079-172d8243ebd3.avif'
+            ];
+            
+            return (
             <article key={post.id} className="group bg-white flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-300">
               
               {/* Image with Badge */}
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img 
-                  src={post.thumbnail || "https://images.unsplash.com/photo-1598902108854-10e335adac99?w=600&q=80"} 
+                  src={post.thumbnail || fallbackImages[index % fallbackImages.length]} 
                   alt={post.title} 
                   className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out"
                 />

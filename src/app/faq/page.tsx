@@ -80,7 +80,7 @@ export default function FAQPage() {
             Can't find the answer you're looking for? Please reach out to our team.
           </p>
           <Link 
-            href="#contact"
+            href="mailto:contact@smithlawnva.com"
             className="inline-block bg-accent-green text-white font-bold tracking-widest uppercase px-8 py-4 text-sm hover:bg-white hover:text-enterprise-navy transition-colors"
           >
             Contact Us

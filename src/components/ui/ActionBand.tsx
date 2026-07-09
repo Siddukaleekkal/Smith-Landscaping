@@ -9,7 +9,7 @@ export default function ActionBand() {
           Find out how you can get a landscape that supports your goals and a team of experts focused on you.
         </p>
         <div className="flex gap-4 justify-center flex-wrap items-center">
-          <Link href="#contact" className="btn text-lg px-8 py-4">Let's get in touch</Link>
+          <Link href="mailto:contact@smithlawnva.com" className="btn text-lg px-8 py-4">Let's get in touch</Link>
           <a href="tel:844-235-7778" className="text-2xl font-extrabold text-white flex items-center px-4 py-2 hover:text-accent-green transition-colors">
             844-235-7778
           </a>

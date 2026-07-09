@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Smith Landscaping",
   description: "Smith Landscaping is the nation's leading commercial landscape company.",
   icons: {
-    icon: '/favicon.png',
+    icon: '/Logos/logo-green-va.png',
   },
 };
 

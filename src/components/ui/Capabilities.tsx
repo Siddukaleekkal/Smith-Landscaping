@@ -1,67 +1,162 @@
+'use client';
+
+import React, { useRef, useState } from 'react';
+import { Volume2, VolumeX, CheckCircle2 } from 'lucide-react';
+
+function PhoneVideo({ src, title }: { src: string, title: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.play().catch(e => console.log("Autoplay blocked:", e));
+    }
+  }, []);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !videoRef.current.muted;
+      setIsMuted(videoRef.current.muted);
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center group w-full">
+      <div className="relative w-full aspect-[9/16] rounded-[24px] overflow-hidden bg-black shadow-2xl border-[4px] border-white">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        >
+          <source src={src.replace('.mov', '.mp4')} type="video/mp4" />
+          <source src={src} type="video/quicktime" />
+        </video>
+        <button 
+          onClick={toggleMute}
+          className="absolute bottom-4 right-4 z-30 bg-black/60 hover:bg-black text-white p-2.5 rounded-full backdrop-blur-md transition-all shadow-lg flex items-center justify-center"
+        >
+          {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+        </button>
+      </div>
+      <div className="mt-6 text-center px-2">
+        <h3 className="text-[15px] font-bold text-enterprise-navy tracking-wide leading-tight group-hover:text-accent-green transition-colors">{title}</h3>
+      </div>
+    </div>
+  );
+}
+
 export default function Capabilities() {
-  const steps = [
+  const services = [
     {
-      title: "Design",
-      description: "Forward-thinking, constructible design that considers future operating costs",
-      img: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=400&h=400"
+      title: "Hardscaping",
+      description: "Custom patios, retaining walls, walkways, and stonework designed to elevate your outdoor living spaces."
     },
     {
-      title: "Develop",
-      description: "Seamless project delivery by technically savvy contractors who deliver on your project goals and long-term expectations",
-      img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400&h=400"
+      title: "Landscaping",
+      description: "Professional planting, turf installation, and complete landscape transformations tailored to your property."
     },
     {
-      title: "Maintain",
-      description: "Consistent service delivery and proactive solutions that keep your property at its best, now and in the future",
-      img: "https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?auto=format&fit=crop&q=80&w=400&h=400"
-    },
-    {
-      title: "Enhance",
-      description: "Thoughtful improvements to enrich your landscape's appearance and sustainability",
-      img: "https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&q=80&w=400&h=400"
+      title: "Maintenance",
+      description: "Comprehensive lawn care, pruning, and seasonal cleanups to keep your property pristine year-round."
     }
   ];
 
   return (
-    <section className="w-full font-sans bg-white flex flex-col">
-      {/* Top Banner */}
-      <div className="bg-enterprise-navy w-full pt-24 pb-[120px] px-[5%] text-center border-t-[20px] border-accent-green">
-        <h2 className="text-3xl md:text-[40px] text-white font-light tracking-wide mb-6">
-          Many Capabilities, One Focus: <span className="font-bold">You</span>
-        </h2>
-        <p className="text-white/90 text-sm md:text-base font-light tracking-wide max-w-2xl mx-auto">
-          Get the ease of a single provider who can help with all your landscape needs.
-        </p>
-      </div>
+    <section className="bg-[#F8F9FA] py-24 md:py-32 px-[5%] border-b border-slate-200 overflow-hidden relative z-0">
+      <div className="max-w-[1300px] mx-auto relative z-10">
+        
+        {/* --- DESKTOP BESPOKE LAYOUT --- */}
+        <div className="hidden lg:flex justify-center items-center gap-12 xl:gap-20">
+          
+          {/* Left Video */}
+          <div className="flex-shrink-0 transition-transform duration-700 hover:scale-105">
+            <div className="w-[300px] xl:w-[340px]">
+              <PhoneVideo 
+                src="/Portfolio/Smith Landscaping | MAIN AD.mov"
+                title="Our Standard of Excellence"
+              />
+            </div>
+          </div>
 
-      {/* The overlapping area containing the line and circles */}
-      <div className="relative w-full">
-        {/* Full-width Line exactly on the boundary between navy and white */}
-        <div className="absolute top-0 left-0 w-full h-[6px] bg-accent-green z-0 -translate-y-1/2"></div>
-
-        {/* 4 Circles Grid */}
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-[5%] -mt-[80px]">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
-            {steps.map((step, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center">
-                {/* Circular Photo */}
-                <div className="w-[160px] h-[160px] rounded-full overflow-hidden border-[6px] border-accent-green bg-white shadow-lg mb-8 hover:scale-105 transition-transform duration-500">
-                  <img src={step.img} alt={step.title} className="w-full h-full object-cover" />
+          {/* Center: Services */}
+          <div className="flex flex-col text-center px-4 relative z-10 min-w-[340px]">
+            <h2 className="text-4xl xl:text-5xl font-light text-enterprise-navy tracking-wide mb-16 leading-tight">
+              Our Main <br/><span className="font-bold">Services</span>
+            </h2>
+            
+            <div className="space-y-16">
+              {services.map((s, i) => (
+                <div key={i} className="relative z-10 flex flex-col items-center group">
+                  <h3 className="text-xl xl:text-2xl font-extrabold text-enterprise-navy mb-3 tracking-[0.2em] uppercase">
+                    {s.title}
+                  </h3>
+                  <p className="text-slate-500 text-[14px] xl:text-[15px] leading-relaxed font-light px-8 max-w-[320px]">
+                    {s.description}
+                  </p>
                 </div>
-                
-                {/* Text */}
-                <h3 className="text-[26px] text-accent-green font-light mb-4">{step.title}</h3>
-                <p className="text-slate-500 text-[13px] leading-[1.8] font-light px-2">
-                  {step.description}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Right Video */}
+          <div className="flex-shrink-0 transform translate-y-16 transition-transform duration-700 hover:scale-105">
+            <div className="w-[300px] xl:w-[340px]">
+              <PhoneVideo 
+                src="/Portfolio/Testimonial.mov"
+                title="Hear From Our Clients"
+              />
+            </div>
+          </div>
+
+        </div>
+
+
+        {/* --- MOBILE LAYOUT (Preserved from previous version) --- */}
+        <div className="flex flex-col lg:hidden">
+          <div className="flex flex-col mb-16">
+            <span className="text-[11px] font-extrabold tracking-[0.2em] text-accent-green uppercase block mb-4">
+              Our Expertise
+            </span>
+            <h2 className="text-3xl font-light text-enterprise-navy tracking-wide mb-8 leading-tight">
+              Comprehensive <br /> Landscaping Solutions.
+            </h2>
+            <p className="text-slate-500 text-lg font-light leading-relaxed mb-12">
+              We provide a high-level approach to hardscaping, landscaping, and maintenance. Experience quality you can see and results you can trust.
+            </p>
+
+            <div className="flex flex-col gap-10">
+              {services.map((service, idx) => (
+                <div key={idx} className="flex flex-col items-start">
+                  <h3 className="text-xl font-bold text-enterprise-navy mb-3 tracking-wide">{service.title}</h3>
+                  <p className="text-slate-500 text-[15px] font-light leading-relaxed max-w-md">
+                    {service.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center">
+            <div className="transform sm:translate-y-12">
+              <PhoneVideo 
+                src="/Portfolio/Testimonial.mov"
+                title="Hear From Our Clients"
+              />
+            </div>
+            <div>
+              <PhoneVideo 
+                src="/Portfolio/Smith Landscaping | MAIN AD.mov"
+                title="Our Standard of Excellence"
+              />
+            </div>
           </div>
         </div>
+
       </div>
-      
-      {/* Bottom spacing */}
-      <div className="pb-32"></div>
     </section>
   );
 }
