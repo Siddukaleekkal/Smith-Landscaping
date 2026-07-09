@@ -48,7 +48,8 @@ export default async function BlogSection() {
               </div>
 
             </article>
-          ))}
+            );
+          })}
         </div>
         
         {/* Bottom Link */}
