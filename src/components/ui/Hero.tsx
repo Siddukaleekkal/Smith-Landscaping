@@ -6,11 +6,15 @@ export default function Hero() {
       
       {/* Left Column - Solid Brand Color & Text */}
       <div className="w-full lg:w-[40%] bg-enterprise-navy flex flex-col justify-center px-8 lg:px-16 xl:px-24 py-20 lg:py-0 z-10 order-2 lg:order-1">
-        <h1 className="text-4xl md:text-5xl lg:text-5xl text-white font-light leading-[1.2] mb-12 font-heading tracking-wide">
+        <h1 className="text-4xl md:text-5xl lg:text-5xl text-white font-light leading-[1.2] mb-6 font-heading tracking-wide">
           Transforming <br />
           Virginia's Homes <br />
           & Properties
         </h1>
+        
+        <p className="text-white/80 text-lg md:text-xl font-light mb-12 max-w-md leading-relaxed">
+          From concept to creation, we bring your outdoor vision to life.
+        </p>
         
         <div className="flex flex-col sm:flex-row gap-4">
           <Link 
